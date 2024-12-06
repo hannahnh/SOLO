@@ -45,6 +45,10 @@ const AthleteHome: React.FC = () => {
     history.push('/athlete-view-media');
   };
 
+  const handlePerformanceSummaryClick = () => {
+    history.push('/athlete-performance-summary');
+  };
+
   return (
     <IonPage>
       <IonHeader>
@@ -101,6 +105,28 @@ const AthleteHome: React.FC = () => {
               }}>{athlete.affiliation_name}</IonCardSubtitle>
             </div>
           </IonCard>
+
+          {/* New card for Performance Summaries */}
+          <IonCard 
+            onClick={handlePerformanceSummaryClick} 
+            style={{ 
+              cursor: 'pointer', 
+              width: '180px', 
+              height: '200px', 
+              marginLeft: '20px',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              background: 'linear-gradient(135deg, #3499cd, #26256C)',
+              color: 'white',
+              borderRadius: '10px',
+            }}
+          >
+            <IonCardTitle style={{ fontSize: '18px', textAlign: 'center', fontWeight: 'bold' }}>
+              Performance Summaries
+            </IonCardTitle>
+          </IonCard>
+              
         </div>
       </IonContent>
       <TabBar2 />
